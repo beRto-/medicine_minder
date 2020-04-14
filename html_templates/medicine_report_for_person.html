@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Medicine Minder {{NameFirst}} {{NameLast}}</title>
+    <!-- https://stackoverflow.com/questions/13162245/flask-jinja2-insert-content-of-css-file-inline -->
+    <style type="text/css">
+    {% include "outlook_customized.css" %}
+    </style>
+  </head>
+
+  <body>
+  <div>
+    <h2>{{ now().strftime('%Y-%m-%d') }}</h2>
+  </div>
+  
+  <div>
+  <br><br>
+  Hello {{NameFirst}} {{NameLast}},<br><br>
+  Some of the medicine you are tracking is expiring soon!<br><br>
+  </div>
+
+  <div>summary of tracked medicines</div>
+  <table>
+    <TH>MEDICINE TAG</TH><TH>STATUS</TH><TH>EXPIRY</TH><TH>DAYS TO EXPIRY</TH><TH>MEDICINE</TH><TH>BRAND</TH><TH>SERIAL NO.</TH>
+    {% for item in medicine_set %}
+    <TR>
+       <TD style="text-align:left; white-space:nowrap;">{{item['Name']}}</TD>
+       <TD {% if 'expired' in item['medicineState'].lower() %}style="background-color:rgb(255,0,0); color:white;"{% elif 'warning' in item['medicineState'].lower() %}style="background-color:rgb(252,213,180);"{% endif %}>{{item['medicineState']}}</TD>
+       <TD style="white-space:nowrap;">{{item['Expiry']|format_iso_date_string}}</TD>
+       <TD style="text-align:right;">{{item['daysToExpiry']}}</TD>
+       <TD>{{item['Type']}}</TD>
+       <TD>{{item['Brand']}}</TD>
+       <TD>{{item['SerialNumber']}}</TD>
+    </TR>
+    {% endfor %}
+  </table>
+  <div>
+    <br><br>
+    <h3>Report generated at: {{ now() }}</h3>
+  </div>
+
+  </body>
+</html>

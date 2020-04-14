@@ -1,0 +1,89 @@
+/* this is css file to work in Outlook, which has limited support for css options                                */
+/* Outlook uses MS Word html rendering engine: https://www.campaignmonitor.com/css/email-client/outlook-2007-16/ */
+/* the result is that the html will render "funny" if viewed in a proper browser                                 */
+div {
+    width: 100%;
+    /* margin-left: 5%; */
+    text-align: center;
+    font-family: Calibri, sans-serif;
+    text-align: left;
+    font-weight: bold;
+}
+
+caption {
+    /* margin-left: 5%; */
+    font-family: Calibri, sans-serif;
+    text-align: left;
+    font-weight: bold;
+    background-color: white;
+    border: 0px solid white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+table{
+    /* width: 80%; */
+    width: 800px;
+    /* margin-left: 5%; */
+    margin-top: 0px;
+    border-collapse: collapse;
+    display: inline-table;
+    vertical-align: text-top;
+    /* table-layout: fixed; */  /*forces table to respect width. https://stackoverflow.com/questions/17969877/force-html-tables-to-not-exceed-their-containers-size */
+    font-family: Calibri, sans-serif;
+}
+
+th {
+    /* width:auto; */
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid black;
+    background-color: rgb(0,121,193);
+    color: white;
+    white-space: nowrap;
+}
+
+td {
+    /* width:auto; */
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 2px solid black;
+    white-space: nowrap;
+}
+
+h1 { 
+    display: block;
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0.1em;
+    /* margin-left: 5%; */
+    margin-right: 0;
+    font-weight: bold;
+    text-align: left;
+    font-family: Calibri, sans-serif;
+}
+
+h2 { 
+    display: block;
+    font-size: 1.0em;
+    margin-top: 0.5em;
+    margin-bottom: 0.1em;
+    /* margin-left: 5%; */
+    margin-right: 0;
+    font-weight: bold;
+    text-align: left;
+    font-family: Calibri, sans-serif;
+}
+
+h3 { 
+    display: block;
+    font-size: 0.75em;
+    margin-top: 0.5em;
+    margin-bottom: 0.1em;
+    /* margin-left: 5%; */
+    margin-right: 0;
+    text-align: left;
+    font-family: Calibri, sans-serif;
+}

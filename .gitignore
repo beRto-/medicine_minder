@@ -1,0 +1,12 @@
+# https://stackoverflow.com/questions/8527597/how-do-i-ignore-files-in-a-directory-in-git
+
+# log files
+output_logs/*.log
+
+# _ folders
+_*/
+
+gmail.txt
+todo.txt
+
+MedicineMinder.db
